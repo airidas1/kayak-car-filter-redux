@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Custom properties */
+:root {
+  --tooltip-text-color: white;
+  --tooltip-background-color: #363f45;
+  --tooltip-margin: 30px;
+  --tooltip-arrow-size: 12px;
+}
+
+.d-flex-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapping */
+.Tooltip-Wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+/* Absolute positioning */
+.Tooltip-Tip {
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.25em;
+  color: var(--tooltip-text-color);
+  background: var(--tooltip-background-color);
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 1;
+  z-index: 100;
+  white-space: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* CSS border triangles */
+.Tooltip-Tip::before {
+  content: ' ';
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: var(--tooltip-arrow-size);
+  margin-left: calc(var(--tooltip-arrow-size) * -1);
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.top {
+  top: -85%;
+}
+/* CSS border triangles */
+.Tooltip-Tip.top::before {
+  top: 100%;
+  border-top-color: var(--tooltip-background-color);
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.right {
+  left: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+/* CSS border triangles */
+.Tooltip-Tip.right::before {
+  left: calc(var(--tooltip-arrow-size) * -1);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-right-color: var(--tooltip-background-color);
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.bottom {
+  bottom: calc(var(--tooltip-margin) * -1);
+}
+/* CSS border triangles */
+.Tooltip-Tip.bottom::before {
+  bottom: 100%;
+  border-bottom-color: var(--tooltip-background-color);
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.left {
+  left: auto;
+  right: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+/* CSS border triangles */
+.Tooltip-Tip.left::before {
+  left: auto;
+  right: calc(var(--tooltip-arrow-size) * -2);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-left-color: var(--tooltip-background-color);
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  height: 100vh;
+}
+
+.car-filter__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4px 8px 4px;
+}
+
+.car-filter__title {
+  color: #212a30;
+  height: 18px;
+  margin-right: 12px;
+  font-family: HelveticaNeue-Bold, 'Helvetica Neue', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.car-filter__reset {
+  color: #0080a4;
+  cursor: pointer;
+  font-family: HelveticaNeue-Bold, 'Helvetica Neue', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.car-filter__primary-selector {
+  padding: 4px 8px;
+  margin-bottom: 16px;
+  height: 60px;
+  min-width: 75px;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  margin-right: 4px;
+  color: #192024;
+  background-color: #fff;
+  border: 1px solid #9ba8b0;
+  border-radius: 4px;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  font-family: HelveticaNeue-Bold, 'Helvetica Neue', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  font-size: 12px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #1f282d;
+  }
+
+  img {
+    width: 48px;
+    height: 32px;
+  }
+}
+.car-filter__primary-selector.active {
+  background-color: #363f45;
+  color: #fff;
+  border-color: #363f45;
+}
+.car-filter__vehicle-type {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0px 16px 0px 16px;
+}
+
+.car-filter__primary-wrapper {
+  display: flex;
+}
+
+.car-filter__primary-selector.more {
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.car-filter__primary-selector.more.active {
+  background: #363f45;
+}
+
+.car-filter__selecor-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #192024;
+  transition: transform 0.15s ease-in-out;
+}
+
+.car-filter__selecor-icon.active {
+  transform: rotate(180deg);
+  transition: transform 0.15s ease-in-out;
+  color: #fff;
+}
+
+.car-filter__selector-text {
+  margin-right: 8px;
+}
+
+.car-filter__filters-list {
+  position: relative;
+}
+
+.car-filter__secondary-selector {
+  position: absolute;
+  top: 60px;
+  left: 350px;
+  width: 250px;
+  height: 264px;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: opacity 100ms ease-in 150ms;
+}
+
+.car-filter__secondary-selector.disabled {
+  display: none;
+}
+
+.car-filter__secondary-inner {
+  padding: 12px 16px;
+  min-width: 200px;
+  transition: ease-in 150ms;
+}
+
+.car-filter__secondary-item {
+  min-width: 250px;
+  max-width: 262px;
+  width: 250px;
+  padding: 8px 16px;
+  margin: 0 -16px;
+  line-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: all 200ms ease-out;
+  list-style-type: none;
+  cursor: pointer;
+
+  img {
+    height: 32px;
+    width: 48px;
+  }
+
+  &:hover {
+    background: #f3f5f7;
+  }
+}
+
+.car-filter__secondary-body__left {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  img {
+    margin: 0 8px 0 8px;
+  }
+}
+.car-filter__secondary-details {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 12px;
+}
+.car-filter__secondary-body__right {
+  margin-left: 3px;
+  font-size: 0.8em;
+  color: #5a6872;
+  line-height: 32px;
+  font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}

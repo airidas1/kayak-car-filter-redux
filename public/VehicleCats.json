@@ -1,0 +1,80 @@
+{
+  "types": [
+    {
+      "vehicle": "Car",
+      "type": "Small",
+      "priority": "primary",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/01_mini_white.png?width=108&height=72",
+      "altImg": "Small",
+      "startingPrice": 196,
+      "primary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Medium",
+      "priority": "primary",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/02_economy_white.png?width=108&height=72",
+      "altImg": "Medium",
+      "startingPrice": 208,
+      "primary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Large",
+      "priority": "primary",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/03_standard_white.png?width=108&height=72",
+      "altImg": "Large",
+      "startingPrice": 231,
+      "primary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "SUV",
+      "priority": "primary",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/05_suv-small_white.png?width=108&height=72",
+      "altImg": "SUV",
+      "startingPrice": 262,
+      "primary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Van",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/11_van_white.png?width=108&height=72",
+      "altImg": "Van",
+      "startingPrice": 371,
+      "secondary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Pickup Truck",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/12_truck_white.png?width=108&height=72",
+      "altImg": "Pickup",
+      "startingPrice": 307,
+      "secondary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Luxury",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/04_premium.png?width=108&height=72",
+      "altImg": "Luxury",
+      "startingPrice": 376,
+      "secondary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Convertible",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/08_convertible_white.png?width=108&height=72",
+      "altImg": "Convertible",
+      "startingPrice": 429,
+      "secondary": true
+    },
+    {
+      "vehicle": "Car",
+      "type": "Commercial",
+      "img": "https://content.r9cdn.net/rimg/carimages/generic/14_commercial_white.png?width=108&height=72",
+      "altImg": "Commercial",
+      "startingPrice": 657,
+      "secondary": true
+    }
+  ]
+}
